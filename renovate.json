@@ -3,5 +3,6 @@
   "extends": [
     ":automergeMinor",
     ":automergePatch"
-  ]
+  ],
+  "automerge": true
 }
