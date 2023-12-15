@@ -3,14 +3,18 @@ name: build argo-rollouts helm chart
 on:
   push:
     branches:
-      - '**'  
+      - '**'
+    paths:
+      - 'charts/argo-rollouts/**'
   pull_request:
     branches:
       - main
+    paths:
+      - 'charts/argo-rollouts/**'
 
 jobs:
   build:
-    name: build and verify chart
+    name: build chart
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
