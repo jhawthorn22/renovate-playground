@@ -1,0 +1,30 @@
+name: build argo-rollouts helm chart
+
+on:
+  push:
+    branches:
+      - '**'  
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: build and verify chart
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+
+    - name: install helm
+      uses: azure/setup-helm@v2
+      with:
+        version: 'v3.7.0'
+
+    - name: build chart
+      run: |
+        cd charts/argo-rollouts
+        helm dep up
+        helm lint .
+        helm template .
+        helm package .
