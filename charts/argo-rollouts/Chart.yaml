@@ -1,0 +1,9 @@
+apiVersion: v2
+name: argo-rollouts
+description: A helm chart deploying Argo Rollouts
+type: application
+version: 1.0.0
+dependencies:
+- name: argo-rollouts
+  version: "2.32.0"
+  repository: https://argoproj.github.io/argo-helm
