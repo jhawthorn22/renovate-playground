@@ -1,13 +1,3 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchCurrentVersion": "!/^0/",
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "merge"
-    }
-  ],
-  "platformAutomerge": true
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
